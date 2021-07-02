@@ -1,52 +1,33 @@
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>GFG User Details</title>
-
-	<!-- INCLUDING JQUERY-->
-	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<meta name="description" content="[Display JSON data in HTML]">
+  <meta charset="utf-8">
+  <title>API</title>
 </head>
-
 <body>
-	<section>
+  <p id="test"></p>
+<script id="jsbin-javascript">
+/* Creating a JSON object with JSON data*/
+var obj = 
+    '{ "hello":"world" }';
 
-			<script>
-				$(document).ready(function () {
+/* Parsing the JSON data*/
+var text = JSON.parse(obj);
 
-					// FETCHING DATA FROM JSON FILE
-					$.getJSON("api.json",
-							function (data) {
-						var student = '';
+/* Displaying the JSON data by linking the #test paragraph tag and the JSON object*/
+document.getElementById("test").innerHTML = text.name + "<br>" + text.age + "<br>" + text.height;
+</script>
 
-						// ITERATING THROUGH OBJECTS
-						$.each(data, function (key, value) {
 
-							//CONSTRUCTION OF ROWS HAVING
-							// DATA FROM JSON OBJECT
-							student += '<tr>';
-							student += '<td>' +
-								value.GFGUserName + '</td>';
 
-							student += '<td>' +
-								value.NoOfProblems + '</td>';
+<script id="jsbin-source-javascript" type="text/javascript">/* Creating a JSON object with JSON data*/
+var obj = 
+    '{ "hello":"world" }';
 
-							student += '<td>' +
-								value.TotalScore + '</td>';
+/* Parsing the JSON data*/
+var text = JSON.parse(obj);
 
-							student += '<td>' +
-								value.Articles + '</td>';
-
-							student += '</tr>';
-						});
-						
-						//INSERTING ROWS INTO TABLE
-						$('#table').append(student);
-					});
-				});
-			</script>
-	</section>
-</body>
-
+/* Displaying the JSON data by linking the #test paragraph tag and the JSON object*/
+document.getElementById("test").innerHTML = text.name + "<br>" + text.age + "<br>" + text.height;</script></body>
 </html>
-
