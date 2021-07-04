@@ -1,1 +1,1 @@
-This is for troubleshooting errors with Mod Bot.
+# This is for troubleshooting errors with Mod Bot.
